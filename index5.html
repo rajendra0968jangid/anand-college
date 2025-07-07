@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <img src="" alt="">
+    <p></p>
+    <p></p>
+    <script>
+            let object = {
+        "id": 1,
+        "email": "john@mail.com",
+        "password": "changeme",
+        "name": "Jhon",
+        "role": "customer",
+        "avatar": "https://i.imgur.com/QkIa5tT.jpeg",
+        "creationAt": "2025-07-04T19:50:22.000Z",
+        "updatedAt": "2025-07-04T19:50:22.000Z"
+      }
+      document.getElementsByTagName("p")[0].innerText = object.id
+      document.getElementsByTagName("p")[1].innerText = object.email
+      document.getElementsByTagName("p")[2].innerText = object.password
+      document.getElementsByTagName("p")[3].innerText = object.name
+      document.getElementsByTagName("p")[4].innerText = object.role
+      document.getElementsByTagName("img")[0].src = object.avatar
+      document.getElementsByTagName("p")[5].innerText = object.creationAt
+      document.getElementsByTagName("p")[6].innerText = object.updatedAt
+    </script>
+  </body>
+</html>

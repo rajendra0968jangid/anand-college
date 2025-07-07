@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>id:</p>
+    <p>title:</p>
+    <p>price:</p>
+    <p>description:</p>
+    <p>category:</p>
+    <img src="" alt="" width="100px">
+    <p>rate:</p>
+    <p>count:</p>
+
+    <script>
+    let object = {
+        "id": 1,
+        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+        "price": 109.95,
+        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        "category": "men's clothing",
+        "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        "rating": {
+          "rate": 3.9,
+          "count": 120
+        }
+      }
+      let p1tag =  document.getElementsByTagName("p")[0].innerText;//previous value get
+      console.log(p1tag)
+      document.getElementsByTagName("p")[0].innerText = p1tag + object.id //current value
+
+      let p2tag =  document.getElementsByTagName("p")[1].innerText;//previous value get
+      document.getElementsByTagName("p")[1].innerText = p2tag + object.title //current value
+
+      let p3tag =  document.getElementsByTagName("p")[2].innerText;//previous value get
+      document.getElementsByTagName("p")[2].innerText = p3tag + object.price //current value 
+
+      let p4tag =  document.getElementsByTagName("p")[3].innerText;//previous value get
+      document.getElementsByTagName("p")[3].innerText = p4tag + object.description //current value 
+
+      let p5tag =  document.getElementsByTagName("p")[4].innerText;//previous value get
+      document.getElementsByTagName("p")[4].innerText = p5tag + object.category //current value
+      
+      document.getElementsByTagName("img")[0].src = object.image //current attribute src value
+
+
+      let p6tag =  document.getElementsByTagName("p")[5].innerText;//previous value get
+      document.getElementsByTagName("p")[5].innerText = p6tag + object.rating.rate //current value
+
+      let p7tag =  document.getElementsByTagName("p")[6].innerText;//previous value get
+      document.getElementsByTagName("p")[6].innerText = p7tag + object.rating.count //current value
+    </script>
+</body>
+</html>

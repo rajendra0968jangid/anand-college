@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="apifun(event)">
+      <div>
+        <label for="">Enter mobile number:</label>
+        <input type="number" name="" id="input" />
+      </div>
+      <div>
+        <input type="submit" value="submit" />
+      </div>
+    </form>
+    <p style="color: green"></p>
+    <script>
+      async function apifun(event) {
+        event.preventDefault();
+        let pincode = document.getElementById("input").value;
+        let apiUrl = await fetch(`https://prod.api.cosmofeed.com/api/user/authenticate`, {
+          method: "POST",
+          body: JSON.stringify({ phoneNumber: pincode, countryCode: "+91" }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        let jsonResponse = await apiUrl.json();
+        console.log(jsonResponse);
+        document.getElementsByTagName("p")[0].innerText = jsonResponse?.["data"] || jsonResponse?.["Error"]["message"];
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="apifun(event)">
+        <label for="">firstname:</label>
+        <input type="text" name="" id=""><br>
+        <label for="">lastname:</label>
+        <input type="text" name="" id=""><br>
+        <label for="">email:</label>
+        <input type="text" name="" id=""><br>
+        <label for="">password:</label>
+        <input type="text" name="" id=""><br>
+        <label for="">confirm password:</label>
+        <input type="submit" name="" id="" value="signup">
+    </form>
+    <script>
+        async function apifun(event){
+            event.preventDefault();
+            let firstname = document.getElementsByTagName("input")[0].value;
+            let apiUrl = await fetch(`https://3ce7-115-249-194-204.ngrok-free.app/register`, {
+                method: "POST",
+                body: JSON.stringify({
+                    firstName:firstname,
+                    "lastName":"alsdkf123",
+                    "email":"raj123@gmail.com",
+                    "password":"admin123",
+                    "confirmPassword":"admin123",
+                    "acceptTerms":"true"
+                }),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              });
+              let jsonResponse = await apiUrl.json();
+              console.log(jsonResponse);
+        }
+    </script>
+</body>
+</html>
